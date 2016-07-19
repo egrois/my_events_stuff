@@ -1,0 +1,19 @@
+package params;
+
+message Instrument
+{
+    required string symbol = 1;
+    required bool trading_enabled = 2;
+}
+
+message Strategy
+{
+    required string name = 1;
+    repeated Instrument instrument = 2;
+}
+
+message Params
+{
+    required Strategy strategy = 1;
+}
+

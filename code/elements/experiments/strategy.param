@@ -1,0 +1,20 @@
+strategy
+{
+    name:                   "GAME_CHANGER" 
+    trading_enabled:        false
+    eloop_cpu_affinity:     15 
+    is_realtime:            true
+    oob_logger_affinity:    14
+    oob_logger_file_prefix: "oob"
+    log_timing:             true
+    instrument 
+    { 
+        symbol: "ESM5" 
+        trading_enabled: false
+    }
+    instrument
+    { 
+        symbol: "ESM6"
+        trading_enabled: false
+    }
+}

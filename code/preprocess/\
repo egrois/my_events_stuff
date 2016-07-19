@@ -1,0 +1,23 @@
+import sys
+from datetime import datetime,time, timedelta
+sys.path.append('/home/egrois/git/code/pybt')
+#import pybt
+import utils
+
+def getSymbol(instrument_root, tradingday_datetime_obj):
+    tuples = utils.sym_vols(tradingday_datetime_obj)
+    symbols_dict = dict([ (k, v) for k, v, w in tuples ])
+    print symbols_dict
+    instr_symbols_dict = dict((k, v) for k,v in symbols_dict.iteritems() if k.startswith(instrument_root))
+    symbol = max(instr_symbols_dict.keys(),  key=(lambda k: instr_symbols_dict[k]))
+    print symbol
+    return symbol
+
+
+def main():
+	getSymbol("ES", datetime(2015, 4, 23))
+
+
+
+if __name__ == "__main__":
+    main()

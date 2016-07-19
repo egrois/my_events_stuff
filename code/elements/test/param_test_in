@@ -1,0 +1,16 @@
+strategy
+{
+    name: "GAME_CHANGER" 
+
+    instrument 
+    { 
+        symbol: "ESM6" 
+        trading_enabled: false
+    }
+        
+    instrument
+    { 
+        symbol: "NQM6"
+        trading_enabled: false
+    }
+}
